@@ -6,11 +6,11 @@ import java.util.Map;
 public class AgentPathogene {
     private final String nom;
     private double L;                     // charge infectieuse Lt
-    private final double tauC;           // τc
-    private final double alphaI;         // αi
+    private final double tauC;           // taux de replication
+    private final double alphaI;         // sensibilite a l'inmunite
     private final Map<Medicament, Double> alphaM;   // sensibilité au médicament αm
-    private final Map<Medicament, Double> resistance; // Rm,t
-    private final Map<Medicament, Double> delta;      // δm (se usa solo si hay resistencia dynamique)
+    private final Map<Medicament, Double> resistance; // Rm par medicament
+    private final Map<Medicament, Double> delta;      // δm (seulement si resistance dynamique)
 
     public AgentPathogene(String nom,
                           double L0,
