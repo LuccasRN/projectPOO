@@ -1,38 +1,37 @@
 package simulation;
 
 public class Medicament {
-    private final String nom;
-    private final double alphaM;   // sensibilité du pathogène αm
-    private final double h;        // taux de disparition h
-    private double concentration;  // Dm,t
+    private String nom;
+    private double tauxDisparition; // h : Taux de disparition
+    private double doseMedic;       // Dm,t : Dose présente
+    
+    // Note : Dans le texte, la sensibilité est alpha_m.
+    // Dans l'UML, 'sensibiliteMedicament' est dans Pathogene.
+    // Nous utiliserons la dose ici pour les calculs.
 
-    public Medicament(String nom, double alphaM, double h) {
+    public Medicament(String nom, double tauxDisparition) {
         this.nom = nom;
-        this.alphaM = alphaM;
-        this.h = h;
-        this.concentration = 0.0;
+        this.tauxDisparition = tauxDisparition;
+        this.doseMedic = 0.0;
     }
 
-    public String getNom() {
-        return nom;
+    // Getters et Setters
+    public double getDoseMedic() { return doseMedic; }
+    public String getNom() { return nom; }
+
+    /**
+     * Ajoute une dose au médicament (dm,t).
+     */
+    public void administrerDose(double dose) {
+        this.doseMedic += dose;
     }
 
-    public double getAlphaM() {
-        return alphaM;
-    }
-
-    public double getConcentration() {
-        return concentration;
-    }
-
-    public void administrerDose(double dose) throws InvalidDoseException {
-        if (dose < 0) {
-            throw new InvalidDoseException("Dose négative interdite");
-        }
-        concentration += dose;
-    }
-
-    public void evoluer() {
-        concentration = h * concentration;
+    /**
+     * Évolution de la concentration selon l'équation (9) :
+     * Dm,t+1 = h * Dm,t
+     * (La nouvelle dose dm,t est ajoutée via administrerDose).
+     */
+    public void evoluerConcentrations() {
+        this.doseMedic = this.doseMedic * this.tauxDisparition;
     }
 }
