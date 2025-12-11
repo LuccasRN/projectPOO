@@ -1,3 +1,3 @@
 public interface Agressif {
-    void evoluer();
+    // Interface marqueur pour les pathogènes agressifs
 }

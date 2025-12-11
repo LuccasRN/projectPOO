@@ -27,8 +27,7 @@ public class PathogeneDynamique extends Pathogene implements Dynamique {
 
     @Override
     public void diminuerReponseImmunitaire(Patient patient) {
-        // Pathogène dynamique : affaiblit progressivement l'immunité avec sa résistance
-        double reduction = beta * Lt * rm * 0.08; // Impact basé sur la charge ET la résistance
+        double reduction = beta * Lt * rm * 0.08;
         patient.setActiviteImmunitaire(patient.getActiviteImmunitaire() - reduction);
     }
 

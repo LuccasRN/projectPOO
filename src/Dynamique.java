@@ -1,3 +1,3 @@
 public interface Dynamique {
-    void evoluerResistance();
+    void evoluerResistance(double doseMedicaments);
 }

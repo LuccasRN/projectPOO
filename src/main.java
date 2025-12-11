@@ -1,9 +1,8 @@
-public class main {
+public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("===== EXEMPLE DE L'ENONCE (Section 3.1) =====\n");
         exempleLivre();
 
-        System.out.println("\n\n===== TEST SUPPLEMENTAIRE : Pathogène Dynamique =====\n");
+        System.out.println("\n\n Pathogène Dynamique :\n");
         testDynamique();
     }
 

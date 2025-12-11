@@ -14,8 +14,7 @@ public class PathogeneAgressif extends Pathogene implements Agressif {
 
     @Override
     public void diminuerReponseImmunitaire(Patient patient) {
-        // Pathogène agressif : impact significatif sur la réponse immunitaire
-        double reduction = beta * Lt * 0.1; // Impact modéré (10%)
+        double reduction = beta * Lt * 0.1; 
         patient.setActiviteImmunitaire(patient.getActiviteImmunitaire() - reduction);
     }
 }

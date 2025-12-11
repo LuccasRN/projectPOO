@@ -27,8 +27,8 @@ public class PathogeneAgressifDynamique extends Pathogene implements Agressif, D
 
     @Override
     public void diminuerReponseImmunitaire(Patient patient) {
-        // Pathogène agressif dynamique : impact très fort sur l'immunité
-        double reduction = beta * Lt * rm * 0.15; // Impact combiné (agressivité + résistance)
+        
+        double reduction = beta * Lt * rm * 0.15; 
         patient.setActiviteImmunitaire(patient.getActiviteImmunitaire() - reduction);
     }
 

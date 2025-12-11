@@ -14,9 +14,8 @@ public class PathogeneClassique extends Pathogene {
 
     @Override
     public void diminuerReponseImmunitaire(Patient patient) {
-        // Pathogène classique : réduit la réponse immunitaire proportionnellement à sa
-        // charge
-        double reduction = beta * Lt * 0.05; // Faible impact
+        
+        double reduction = beta * Lt * 0.05; 
         patient.setActiviteImmunitaire(patient.getActiviteImmunitaire() - reduction);
     }
 }
