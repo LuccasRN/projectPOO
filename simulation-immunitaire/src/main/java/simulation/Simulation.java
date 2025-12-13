@@ -17,7 +17,7 @@ public class Simulation {
         System.out.println("Début de la simulation...");
 
         System.out.printf("%-6s | %-15s | %-15s | %-15s | %-15s\n", 
-            "Cycle", "Charge (L)", "Immunité (I)", "Médic (D)", "Résistance (R)");
+            "Cycle", "Charge (L)", "Immunite (I)", "Medic (D)", "Resistance (R)");
         System.out.println("--------------------------------------------------------------------------------");
 
         while (gestionnaireCycle.aUnSuivant()) {
