@@ -9,13 +9,11 @@ public class PathogeneAgressif extends Pathogene implements Agressif {
 
     @Override
     public void evoluer() {
-        // Méthode de l'interface (logique spécifique si besoin hors du cycle standard)
     }
 
     @Override
     public void evoluer(double lt, HashMap<Medicament, Double> doseMedicaments) {
         double effetMeds = calculerEffetMedicaments(doseMedicaments);
-        // Équation 2 : Croissance quadratique (tau * Lt^2)
         double delta = (tauxReplication * Math.pow(this.lt, 2)) - (sensibiliteImm * reponseImmu) - effetMeds;
         
         this.lt = Math.max(0, this.lt + delta);

@@ -3,7 +3,7 @@ package simulation;
 import java.util.ArrayList;
 
 public abstract class Patient {
-    protected double coefficientFatigue; // f
+    protected double coefficientFatigue; 
     protected ArrayList<Pathogene> pathogenes;
 
     public Patient(double coefficientFatigue) {
@@ -19,6 +19,6 @@ public abstract class Patient {
         return pathogenes;
     }
 
-    // Méthode abstraite pour l'évolution immunitaire spécifique au type de patient
+   
     public abstract void evoluerReponseImmunitaire();
 }

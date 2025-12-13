@@ -12,7 +12,6 @@ public class PatientAge extends Patient {
             double Lt_next = p.getLt();
             double beta = p.getBeta();
             
-            // It+1 = max(0, It + beta*Lt+1 - f*(It^2))
             double It_next = It + (beta * Lt_next) - (coefficientFatigue * Math.pow(It, 2));
             p.setReponseImmu(Math.max(0, It_next));
         }

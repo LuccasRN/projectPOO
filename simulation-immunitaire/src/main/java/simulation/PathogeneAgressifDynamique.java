@@ -20,11 +20,10 @@ public class PathogeneAgressifDynamique extends Pathogene implements Agressif, D
 
     @Override
     public void evoluer(double lt, HashMap<Medicament, Double> doseMedicaments) {
-        // 1. Dynamique
+        
         double doseTotale = doseMedicaments.values().stream().mapToDouble(Double::doubleValue).sum();
         mettreAJourResistance(doseTotale);
 
-        // 2. Agressif (Quadratique)
         double effetMeds = calculerEffetMedicaments(doseMedicaments);
         double delta = (tauxReplication * Math.pow(this.lt, 2)) - (sensibiliteImm * reponseImmu) - effetMeds;
         this.lt = Math.max(0, this.lt + delta);
